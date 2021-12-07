@@ -65,25 +65,6 @@ app.delete("/api/brackets/:id", (request, response) => {
     });
 });
 
-// app.put("/api/brackets/:id", (request, response) => {
-//     const client = createClient();
-
-//     client.connect().then(() => {
-//         client
-//             .query(
-//                 "UPDATE posts SET title = $1, body = $2 WHERE id = $3 RETURNING *",
-//                 [request.body.title, request.body.body, request.params.id]
-//             )
-//             .then((queryResponse) => {
-//                 if (queryResponse.rowCount === 1) {
-//                     response.json(queryResponse.rows[0]);
-//                 } else {
-//                     response.status(404).send();
-//                 }
-//             });
-//     });
-// });
-
 function createClient() {
     const client = new Client({
         connectionString: process.env.CONNECTION_STRING,
