@@ -67,7 +67,7 @@ app.delete("/api/brackets/:id", (request, response) => {
 
 function createClient() {
     const client = new Client({
-        connectionString: process.env.CONNECTION_STRING,
+        connectionString: process.env.DATABASE_URL,
         ssl: { rejectUnauthorized: false },
     });
 
